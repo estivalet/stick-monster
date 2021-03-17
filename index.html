@@ -436,8 +436,7 @@ function init() {
 	  }
 	});
 
-	canvas.addEventListener("ontouchstart", function (event) {
-		event.preventDefault();
+	canvas.addEventListener("touchstart", function (event) {
 	  if (phase == "waiting") {
 		lastTimestamp = undefined;
 		introductionElement.style.opacity = 0;
@@ -452,8 +451,7 @@ function init() {
 	  }
 	});
 
-	canvas.addEventListener("ontouchend", function (event) {
-		event.preventDefault();
+	canvas.addEventListener("touchend", function (event) {
 	  if (phase == "stretching") {
 		phase = "turning";
 	  }
