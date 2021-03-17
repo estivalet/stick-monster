@@ -437,12 +437,12 @@ function init() {
 	});
 
 	canvas.addEventListener("touchstart", function (event) {
-	  if (phase == "waiting") {
-		lastTimestamp = undefined;
-		introductionElement.style.opacity = 0;
-		phase = "stretching";
-		window.requestAnimationFrame(animate);
-	  }
+		if (e.target == canvas) {
+			e.preventDefault();
+		}	
+		var mouseEvent = new MouseEvent("mousedown", {});
+		canvas.dispatchEvent(mouseEvent);	
+		
 	});
 
 	window.addEventListener("mouseup", function (event) {
@@ -452,9 +452,12 @@ function init() {
 	});
 
 	canvas.addEventListener("touchend", function (event) {
-	  if (phase == "stretching") {
-		phase = "turning";
-	  }
+		if (e.target == canvas) {
+			e.preventDefault();
+		}	
+		var mouseEvent = new MouseEvent("mouseup", {});
+		canvas.dispatchEvent(mouseEvent);	
+	  
 	});
 
 	window.addEventListener("resize", function (event) {
