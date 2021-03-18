@@ -437,11 +437,11 @@ function init() {
 	});
 
 	canvas.addEventListener("touchstart", function (event) {
-		if (e.target == canvas) {
-			e.preventDefault();
+		if (event.target == canvas) {
+			event.preventDefault();
 		}	
 		var mouseEvent = new MouseEvent("mousedown", {});
-		canvas.dispatchEvent(mouseEvent);	
+		window.dispatchEvent(mouseEvent);	
 		
 	});
 
@@ -452,11 +452,11 @@ function init() {
 	});
 
 	canvas.addEventListener("touchend", function (event) {
-		if (e.target == canvas) {
-			e.preventDefault();
+		if (event.target == canvas) {
+			event.preventDefault();
 		}	
 		var mouseEvent = new MouseEvent("mouseup", {});
-		canvas.dispatchEvent(mouseEvent);	
+		window.dispatchEvent(mouseEvent);	
 	  
 	});
 
